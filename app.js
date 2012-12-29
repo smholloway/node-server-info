@@ -11,17 +11,16 @@ http.createServer(function (req, res) {
     keys.map(function(method) {
       res.write(method + ":" + JSON.stringify(os[method](), 2, true)) + ",\n";
     })
-  }
-  else {
+  } else {
       try {
-          var resu = os[call]();
-          res.write(JSON.stringify(resu), 'utf8');
+          var result = os[call]();
+          res.write(JSON.stringify(result), 'utf8');
       }
       catch(e) {
-          res.end("Sorry, try \"all\" one of these available actions: " + keys.join(", "));
+          res.end("Unknown action. Try \"all\" to retrieve all the available information or use one of these specific actions: " + keys.join(", "));
       }
   }
 
   res.end();
-}).listen(1337, "localhost");
-console.log('Server running at http://localhost:1337/');
+}).listen(3001, "localhost");
+console.log('Server running at http://localhost:3001/');
