@@ -9,4 +9,7 @@ To launch the server, run
 node server-info.js
 ```
 
+Props
+===
+
 Inspired by http://www.h3manth.com/content/getting-server-info-using-nodejs with help from Otto Ottinger
